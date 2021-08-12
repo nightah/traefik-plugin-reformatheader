@@ -1,3 +1,3 @@
-module github.com/mrdrelar/traefik-plugin-rewriteheader
+module github.com/domainesia/traefik-plugin-rewriteheader
 
 go 1.14
