@@ -9,10 +9,10 @@ import (
 
 // Config the plugin configuration.
 type Config struct {
-	FromHead string `json:"fromhead,omitempty"` // target header
-	Regex    string `json:"regex,omitempty"`    // variable for creating a new header that will store data from the target header
-	Create   string `json:"create,omitempty"`   // creating a new header for store extracted data from the old
-	Prefix   string `json:"prefix,omitempty"`   // add prefix for a new header
+	FromHead  string `json:"fromhead,omitempty"`  // target header
+	Regex     string `json:"regex,omitempty"`     // variable for creating a new header that will store data from the target header
+	Create    string `json:"create,omitempty"`    // creating a new header for store extracted data from the old
+	Format    string `json:"format,omitempty"`    // transform captured data on the new header
 }
 
 // CreateConfig creates and initializes the plugin configuration.
@@ -33,10 +33,7 @@ func New(ctx context.Context, next http.Handler, config *Config, name string) (h
 
 	return http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
 		head := req.Header.Get(config.FromHead)
-		result := re.FindString(head)
-		if config.Prefix != "" {
-			result = config.Prefix + result
-		}
+		result := re.ReplaceAllString(head, config.format)
 		req.Header.Set(config.Create, result)
 		next.ServeHTTP(rw, req)
 	}), nil
