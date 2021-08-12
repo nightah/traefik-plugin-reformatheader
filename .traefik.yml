@@ -1,11 +1,11 @@
-displayName: Rewrite Header
-summary: Extract data from the HTTP request header via regexp and add extracted data to a new.
+displayName: Rewrite Header Regex
+summary: Extract data from the HTTP request header via regexp and format extracted data into a new field.
 type: middleware
-import: github.com/mrdrelar/traefik-plugin-rewriteheader
+import: github.com/domainesia/traefik-plugin-rewriteheader
 compatibility: TODO
 testData:
   fromhead: "X-TargetHeader"
-  regex:    "foo.?"
+  regex:    "f(oo).?"
   create:   "X-NewHeader"
-  prefix:   "CN="
+  format:   "${0}${1}"
 
