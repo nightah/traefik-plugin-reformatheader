@@ -1,6 +1,6 @@
-# Rewrite Header
+# Rewrite Header Regex
 
-Rewrite header is a middleware plugin for [Traefik](https://traefik.io) which extracts data via regexp from the target header and creates a new with extracted content.
+Rewrite Header Regex is a middleware plugin for [Traefik](https://traefik.io) which extracts data via regexp from the target header and creates a new field with extracted content formatted using regex substitution.
 
 ## Configuration
 
