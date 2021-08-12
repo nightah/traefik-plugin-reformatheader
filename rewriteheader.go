@@ -33,7 +33,7 @@ func New(ctx context.Context, next http.Handler, config *Config, name string) (h
 
 	return http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
 		head := req.Header.Get(config.FromHead)
-		result := re.ReplaceAllString(head, config.format)
+		result := re.ReplaceAllString(head, config.Format)
 		req.Header.Set(config.Create, result)
 		next.ServeHTTP(rw, req)
 	}), nil
