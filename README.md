@@ -11,7 +11,7 @@ Rewrite header is a middleware plugin for [Traefik](https://traefik.io) which ex
   token = "xxxx"
 
 [experimental.plugins.rewritebody]
-  modulename = "github.com/mrdrelar/traefik-plugin-rewriteheader"
+  modulename = "github.com/domainesia/traefik-plugin-rewriteheader"
   version = "v0.0.1"
 ```
 
@@ -36,9 +36,9 @@ To configure the Rewrite Head plugin you should create a [middleware](https://do
   [http.middlewares]
     [http.middlewares.rewriteheader.plugin.dev]
       fromhead  = "X-TargetHeader" //required
-      regex     = "foo.?"          //required
+      regex     = "f(oo).?"        //required
       create    = "X-NewHeader"    //required
-      prefix    = "CN="            //optional
+      format    = "${0}${1}"       //required
 
 ```
 
