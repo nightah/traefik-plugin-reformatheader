@@ -42,6 +42,9 @@ To configure the Rewrite Head plugin you should create a [middleware](https://do
 
 ```
 
+## Acknowledgement
+This project is based on https://github.com/mrdrelar/traefik-plugin-rewriteheader.
+
 ## Licensing & Support Notice
 MIT Licensed.
 
