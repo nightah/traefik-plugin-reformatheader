@@ -42,3 +42,10 @@ To configure the Rewrite Head plugin you should create a [middleware](https://do
 
 ```
 
+## Licensing & Support Notice
+MIT Licensed.
+
+**[DomaiNesia](https://www.domainesia.com) neither support nor guarantee maintenance of this project**.
+
+This is a part of giving back to open source community commitment from our company.
+Yet, our team still small, so we will contribute and maintain on what we currently use.
