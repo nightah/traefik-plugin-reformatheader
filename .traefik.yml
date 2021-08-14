@@ -1,7 +1,7 @@
 displayName: Rewrite Header Regex
 summary: Extract data from the HTTP request header via regexp and format extracted data into a new field.
 type: middleware
-import: github.com/domainesia/traefik-plugin-rewriteheader
+import: github.com/domainesia/traefik-plugin-reformatheader
 compatibility: TODO
 testData:
   fromhead: "X-TargetHeader"
